@@ -1,12 +1,16 @@
 import React from 'react';
+import { LoginMain, Title } from './LoginStyles';
 
 const Login = () => {
   return (
-    <main>
-      <h1>Login</h1>
-      <p>Logo (img)</p>
-      <p>Input group</p>
-    </main>
+    <LoginMain>
+      <Title>Login</Title>
+      <img src='https://i.imgur.com/zxhhEk9.png' alt='Logo de Rappi' />
+      <form>
+        <input type='email' name='email' id='email' placeholder='Email' />
+        <button type='submit'>Continuar</button>
+      </form>
+    </LoginMain>
   );
 };
 
