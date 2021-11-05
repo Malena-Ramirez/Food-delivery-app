@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const LoginMain = styled.main`
-  background-color: blue;
+  background: linear-gradient(45deg, #ff3689 0%, #ff284e 25%, #ff441f 90%);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -12,3 +12,4 @@ export const LoginMain = styled.main`
 export const Title = styled.h1`
   display: none;
 `;
+
