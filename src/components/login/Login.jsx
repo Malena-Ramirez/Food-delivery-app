@@ -1,11 +1,11 @@
 import React from 'react';
-import { LoginMain, Title } from './LoginStyles';
+import { LoginMain, LogoImg, Title } from './LoginStyles';
 
 const Login = () => {
   return (
     <LoginMain>
       <Title>Login</Title>
-      <img src='https://i.imgur.com/zxhhEk9.png' alt='Logo de Rappi' />
+      <LogoImg src='https://i.imgur.com/zxhhEk9.png' alt='Logo de Rappi' />
       <form>
         <input type='email' name='email' id='email' placeholder='Email' />
         <button type='submit'>Continuar</button>
