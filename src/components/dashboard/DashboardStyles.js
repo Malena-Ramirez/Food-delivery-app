@@ -7,10 +7,8 @@ export const DashboardMain = styled.main`
   grid-template-columns: 1fr 3fr;
 `;
 
-export const Header = styled.header`
+export const HeaderContainer = styled.header`
   padding: 1em 1.5em;
-  background: linear-gradient(45deg, #ff3689 0%, #ff284e 25%, #ff441f 90%);
-  /* opacity: 0.7; */
 `;
 
 export const MainSection = styled.section`
@@ -38,11 +36,9 @@ export const Restaurant = styled.li`
   padding: 1.5em 2em;
   border-radius: 10px;
   margin-bottom: 1em;
-  background-color:#c0c0c0;
-  opacity: 0.46;
+  background: linear-gradient(45deg, #ff3689 0%, #ff284e 25%, #ff441f 90%);
   &:hover{
-    background-color: #eeeeee;
-    opacity: 1;
     cursor: pointer;
+    filter: drop-shadow(0 0 0.75rem #AAAAAA);
   }
 `;
