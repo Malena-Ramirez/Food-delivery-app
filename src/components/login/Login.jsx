@@ -1,4 +1,5 @@
 import React from 'react';
+import Email from './Email';
 import {
   LoginMain,
   LogoImg,
@@ -17,18 +18,7 @@ const Login = () => {
           alt='Logo de Rappi'
           className='mb-5'
         />
-        <form className='form-floating'>
-          <LoginInput
-            type='email'
-            className='form-control mb-4'
-            id='floatingInput'
-            placeholder='Email'
-          />
-          <label htmlFor='floatingInput'>Email</label>
-          <button type='submit' className='btn btn-dark w-100 py-2'>
-            Continuar
-          </button>
-        </form>
+        <Email />
       </LoginContainer>
     </LoginMain>
   );
