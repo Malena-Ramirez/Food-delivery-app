@@ -1,0 +1,102 @@
+{
+  "users": [
+    {
+      "id": 100,
+      "email": "test@test.com",
+      "OTP": "0000",
+      "image": "https://i.imgur.com/XjJDv4y.jpg",
+      "orders": [
+        {
+          "restaurantID": 1000,
+          "deliveryStatusID": 5
+        },
+        {
+          "restaurantID": 1001,
+          "deliveryStatusID": 2
+        },
+        {
+          "restaurantID": 1102,
+          "deliveryStatusID": 3
+        },
+        {
+          "restaurantID": 1103,
+          "deliveryStatusID": 4
+        }
+      ]
+    },
+    {
+      "id": 101,
+      "email": "prueba@prueba.com",
+      "OTP": "1234",
+      "image": "https://i.imgur.com/qVhUGyf.jpg",
+      "orders": [
+        {
+          "restaurantID": 1001,
+          "deliveryStatusID": 5
+        },
+        {
+          "restaurantID": 1003,
+          "deliveryStatusID": 2
+        },
+        {
+          "restaurantID": 1104,
+          "deliveryStatusID": 3
+        }
+      ]
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1000,
+      "name": "Atrium",
+      "image": "https://i.imgur.com/bFKdWIP.jpg"
+    },
+    {
+      "id": 1001,
+      "name": "Crepes & Waffles",
+      "image": "https://i.imgur.com/40jmxoM.png"
+    },
+    {
+      "id": 1002,
+      "name": "Domino's Pizza",
+      "image": "https://i.imgur.com/AqXHSDB.png"
+    },
+    {
+      "id": 1000,
+      "name": "Papa John's",
+      "image": "https://i.imgur.com/Fqi6Vsr.jpg"
+    },
+    {
+      "id": 1000,
+      "name": "Sandwich Qbano",
+      "image": "https://i.imgur.com/iprOxqv.png"
+    }
+  ],
+  "deliveryStatus": [
+    {
+      "id": 1,
+      "message": "El restaurante ha recibido tu orden.",
+      "icon": "bi bi-list-check"
+    },
+    {
+      "id": 2,
+      "message": "El restaurante se encuentra preparando tu comida.",
+      "icon": "bi bi-egg-fried"
+    },
+    {
+      "id": 3,
+      "message": "Tu pedido está en camino.",
+      "icon": "bi bi-bicycle"
+    },
+    {
+      "id": 4,
+      "message": "Tu pedido está llegando.",
+      "icon": "bi bi-door-closed"
+    },
+    {
+      "id": 5,
+      "message": "Pedido entregado.",
+      "icon": "bi bi-check-square"
+    }
+  ]
+}
