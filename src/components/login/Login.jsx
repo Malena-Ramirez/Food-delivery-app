@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Email from './Email';
 import { LoginMain, LogoImg, Title, LoginContainer } from './LoginStyles';
+import Otp from './Otp';
 
 const Login = () => {
+  const [showOtp, setShowOtp] = useState(false);
   return (
     <LoginMain>
       <LoginContainer>
@@ -12,7 +14,7 @@ const Login = () => {
           alt='Logo de Rappi'
           className='mb-5'
         />
-        <Email />
+        {showOtp ? <Otp /> : <Email setShowOtp={setShowOtp} />}
       </LoginContainer>
     </LoginMain>
   );
