@@ -1,12 +1,6 @@
 import React from 'react';
 import Email from './Email';
-import {
-  LoginMain,
-  LogoImg,
-  Title,
-  LoginContainer,
-  LoginInput,
-} from './LoginStyles';
+import { LoginMain, LogoImg, Title, LoginContainer } from './LoginStyles';
 
 const Login = () => {
   return (

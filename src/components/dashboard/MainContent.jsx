@@ -4,9 +4,7 @@ import { MainSection } from './DashboardStyles';
 const MainContent = () => {
   return (
     <MainSection>
-      <h2 className='text-center py-3'>Bootstrap 4 Timeline</h2>
-
-      <div className='container py-2 mt-4 mb-4'>
+      <div className='container py-3 px-5 mt-4 mb-4'>
         {/* <!-- timeline item 1 --> */}
         <div className='row no-gutters'>
           <div className='col-sm'> {/*<!--spacer-->*/} </div>
