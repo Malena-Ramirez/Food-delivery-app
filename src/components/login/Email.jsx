@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { LoginInput } from './LoginStyles';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { userLogged } from '../../actions/userAction';
 
 const initialForm = {
   email: '',
@@ -48,6 +50,15 @@ const Email = ({ setShowOtp }) => {
   useEffect(() => {
     setShowOtp(submitStatus);
   }, [setShowOtp, submitStatus]);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (submitStatus) {
+      const userToLogin = users.find((user) => user.email === form.email);
+      dispatch(userLogged(userToLogin));
+    }
+  }, [dispatch, form.email, submitStatus, users]);
 
   return (
     <form className='form-floating' onSubmit={handleSubmit}>
