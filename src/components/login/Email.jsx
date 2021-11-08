@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from '../../hooks/useForm';
 import { LoginInput } from './LoginStyles';
+import axios from 'axios';
 
 const initialForm = {
   email: '',
@@ -9,6 +10,15 @@ const initialForm = {
 const Email = ({ setShowOtp }) => {
   const [submitStatus, setSubmitStatus] = useState(false);
 
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:3004/users`).then((res) => {
+      const listUsers = res.data;
+      setUsers(listUsers);
+    });
+  }, []);
+
   const validationsForm = (form) => {
     let error = '';
     let regexEmail = /^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$/;
@@ -16,7 +26,9 @@ const Email = ({ setShowOtp }) => {
     if (!form.email.trim()) {
       error = 'El campo email es requerido.';
     } else if (!regexEmail.test(form.email.trim())) {
-      error = 'El campo email es incorrecto';
+      error = 'El campo email es incorrecto.';
+    } else if (!users.find((user) => user.email === form.email)) {
+      error = 'El correo no se encuentra registrado.';
     } else {
       setSubmitStatus(true);
     }
