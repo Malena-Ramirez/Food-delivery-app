@@ -23,8 +23,8 @@ export const Title = styled.h1`
 
 export const LogoImg = styled.img`
   border-radius: 50%;
-  width: 50vw;
-  height: 50vw;
+  width: 100%;
+  height: 100%;
   max-width: 270px;
   max-height: 270px;
   min-width: 200px;
@@ -35,8 +35,6 @@ export const LoginInput = styled.input`
   background-color: #fdfdfd;
   &:focus {
     border-color: #FF441F;
-    /* box-shadow: none; */
-    /* box-shadow: 2px 2px 10px 1px rgba(255,68,31,0.6);  */
     box-shadow: 0 0 0 .25rem #ff441f75; 
   }
 `;
