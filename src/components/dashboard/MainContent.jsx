@@ -17,18 +17,18 @@ const MainContent = () => {
     }
   }, [deliveryStatus, restaurantSelected.deliveryStatusID]);
 
-  console.log(status);
-
   return (
-    <MainSection className='d-flex flex-column justify-content-center align-items-center'>
+    <MainSection>
       {status.length > 0 ? (
         <div className='container py-3 px-5 mt-4 mb-4'>
-          <Card />
+          <Card status={status} />
         </div>
       ) : (
-        <p className='text-muted text-center fs-4'>
-          Elige un restaurante para conocer el estado del pedido
-        </p>
+        <div className='h-100 d-flex align-items-center justify-content-center'>
+          <p className='text-muted text-center fs-4'>
+            Elige un restaurante para conocer el estado del pedido
+          </p>
+        </div>
       )}
     </MainSection>
   );
