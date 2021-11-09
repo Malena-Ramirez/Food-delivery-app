@@ -9,6 +9,7 @@ import {
   RestaurantLogo,
   Title,
 } from '../DashboardStyles';
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
@@ -53,17 +54,7 @@ const Header = () => {
       <Title>Dashboard</Title>
       <AvatarContainer>
         <AvatarImage src={image} alt='Ávatar del usuario' />
-        <form className='d-flex input-group ms-3'>
-          <span className='input-group-text' id='basic-addon1'>
-            <img src='https://i.imgur.com/tB9uhDh.png' alt='Búsqueda' />
-          </span>
-          <input
-            className='form-control'
-            type='search'
-            placeholder='Search'
-            aria-label='Search'
-          />
-        </form>
+        <SearchBar />
       </AvatarContainer>
       <nav className='mt-5'>
         <ul>
