@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { restaurantSelectedAction } from '../../../actions/restaurantSelectedAction';
 import {
@@ -17,6 +17,7 @@ const Header = () => {
   const { restaurantSelected } = useSelector(
     (state) => state.restaurantSelected
   );
+  const { restaurantSearch } = useSelector((state) => state.restaurantSearch);
 
   const { image, orders } = user;
 
@@ -39,9 +40,18 @@ const Header = () => {
       });
       restaurantsOrders.push(obj);
     });
-
     setOrdersList(restaurantsOrders);
   }, [orders, restaurants]);
+
+  const filterOrders = useMemo(() => {
+    if (!restaurantSearch) return ordersList;
+
+    return ordersList.filter((order) =>
+      order.restaurant.name
+        .toLowerCase()
+        .includes(restaurantSearch.toLowerCase())
+    );
+  }, [ordersList, restaurantSearch]);
 
   const dispatch = useDispatch();
 
@@ -57,9 +67,9 @@ const Header = () => {
         <SearchBar />
       </AvatarContainer>
       <nav className='mt-5'>
-        <ul>
-          {ordersList.length > 0 &&
-            ordersList.map((order) => {
+        <ul className='px-2'>
+          {filterOrders.length > 0 ? (
+            filterOrders.map((order) => {
               const { restaurant } = order;
 
               return (
@@ -75,7 +85,12 @@ const Header = () => {
                   {restaurant.name}
                 </Restaurant>
               );
-            })}
+            })
+          ) : (
+            <p className='text-secondary text-center fs-4 px-2'>
+              No se encontraron resultados
+            </p>
+          )}
         </ul>
       </nav>
     </HeaderContainer>
