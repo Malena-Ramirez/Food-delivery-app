@@ -36,8 +36,7 @@ export const Restaurant = styled.li`
   padding: 1.5em;
   border-radius: 10px;
   margin-bottom: 1em;
-  /* background: linear-gradient(45deg, #ff3689 0%, #ff284e 25%, #ff441f 90%); */
-  background-color: ${props => false ? '#ff441f' : '#c0c0c075'};
+  background-color: ${props => props.isSelected ? '#ff441f' : '#c0c0c075'};
   color: white;
   &:hover{
     cursor: pointer;

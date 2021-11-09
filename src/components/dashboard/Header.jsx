@@ -13,7 +13,13 @@ import {
 const Header = () => {
   const { user } = useSelector((state) => state.user);
   const { restaurants } = useSelector((state) => state.restaurants);
+  const { restaurantSelected } = useSelector(
+    (state) => state.restaurantSelected
+  );
+
   const { image, orders } = user;
+
+  const { id: selectedID } = restaurantSelected;
 
   const [ordersList, setOrdersList] = useState([]);
 
@@ -21,11 +27,12 @@ const Header = () => {
     let restaurantsOrders = [];
     let obj = {};
     orders.forEach((order) => {
-      restaurants.forEach((restaurant) => {
+      restaurants.forEach((restaurant, index) => {
         if (order.restaurantID === restaurant.id) {
           obj = {
             restaurant,
             deliveryStatusID: order.deliveryStatusID,
+            id: 1000 + index,
           };
         }
       });
@@ -68,6 +75,7 @@ const Header = () => {
                 <Restaurant
                   key={restaurant.id}
                   onClick={() => handleClick(order)}
+                  isSelected={order.id === selectedID}
                 >
                   <RestaurantLogo
                     src={restaurant.image}
