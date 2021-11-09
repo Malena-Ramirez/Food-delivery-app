@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
-import { MainSection } from './DashboardStyles';
+import { MainSection } from '../DashboardStyles';
 
 const MainContent = () => {
   const { restaurantSelected } = useSelector(

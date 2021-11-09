@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { restaurantSelectedAction } from '../../actions/restaurantSelectedAction';
+import { restaurantSelectedAction } from '../../../actions/restaurantSelectedAction';
 import {
   AvatarContainer,
   AvatarImage,
@@ -8,7 +8,7 @@ import {
   Restaurant,
   RestaurantLogo,
   Title,
-} from './DashboardStyles';
+} from '../DashboardStyles';
 
 const Header = () => {
   const { user } = useSelector((state) => state.user);
