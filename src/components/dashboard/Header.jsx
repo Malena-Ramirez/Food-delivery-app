@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { restaurantSelectedAction } from '../../actions/restaurantSelectedAction';
 import {
@@ -15,13 +15,25 @@ const Header = () => {
   const { restaurants } = useSelector((state) => state.restaurants);
   const { image, orders } = user;
 
-  let restaurantsOrders = [];
-  orders.forEach((element) => {
-    const match = restaurants.find(
-      (restaurant) => restaurant.id === element.restaurantID
-    );
-    restaurantsOrders.push(match);
-  });
+  const [ordersList, setOrdersList] = useState([]);
+
+  useEffect(() => {
+    let restaurantsOrders = [];
+    let obj = {};
+    orders.forEach((order) => {
+      restaurants.forEach((restaurant) => {
+        if (order.restaurantID === restaurant.id) {
+          obj = {
+            restaurant,
+            deliveryStatusID: order.deliveryStatusID,
+          };
+        }
+      });
+      restaurantsOrders.push(obj);
+    });
+
+    setOrdersList(restaurantsOrders);
+  }, [orders, restaurants]);
 
   const dispatch = useDispatch();
 
@@ -48,18 +60,23 @@ const Header = () => {
       </AvatarContainer>
       <nav className='mt-5'>
         <ul>
-          {restaurantsOrders.map((restaurant) => (
-            <Restaurant
-              key={restaurant.id}
-              onClick={() => handleClick(restaurant)}
-            >
-              <RestaurantLogo
-                src={restaurant.image}
-                alt='Logo del restaurante'
-              />
-              {restaurant.name}
-            </Restaurant>
-          ))}
+          {ordersList.length > 0 &&
+            ordersList.map((order) => {
+              const { restaurant } = order;
+
+              return (
+                <Restaurant
+                  key={restaurant.id}
+                  onClick={() => handleClick(order)}
+                >
+                  <RestaurantLogo
+                    src={restaurant.image}
+                    alt='Logo del restaurante'
+                  />
+                  {restaurant.name}
+                </Restaurant>
+              );
+            })}
         </ul>
       </nav>
     </HeaderContainer>
