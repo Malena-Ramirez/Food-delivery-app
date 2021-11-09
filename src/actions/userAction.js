@@ -1,6 +1,6 @@
 import { types } from "../type/types";
 
-export const userLogged = user => {
+export const userAction = user => {
   return {
     type: types.user,
     payload: {
