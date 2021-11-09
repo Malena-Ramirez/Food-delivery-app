@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Card from './Card';
-import { MainSection } from '../DashboardStyles';
+import { MainSection, TimeLineContainer } from '../DashboardStyles';
 
 const MainContent = () => {
   const { restaurantSelected } = useSelector(
@@ -20,9 +20,9 @@ const MainContent = () => {
   return (
     <MainSection>
       {status.length > 0 ? (
-        <div className='container py-3 px-5 mt-4 mb-4'>
+        <TimeLineContainer className='container py-3 px-5 mt-5 mb-4'>
           <Card status={status} />
-        </div>
+        </TimeLineContainer>
       ) : (
         <div className='h-100 d-flex align-items-center justify-content-center'>
           <p className='text-muted text-center fs-4'>

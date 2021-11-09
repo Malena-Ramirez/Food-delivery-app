@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { restaurantSearchAction } from '../../../actions/restaurantSearchAction';
+import {
+  SearchBarContainer,
+  SearchBarInput,
+  SearchBarIcon,
+  SearchBarImg,
+} from '../DashboardStyles';
 
 const SearchBar = () => {
   const [search, setSearch] = useState('');
@@ -15,19 +21,22 @@ const SearchBar = () => {
   }, [dispatch, search]);
 
   return (
-    <div className='d-flex input-group ms-3'>
-      <span className='input-group-text' id='basic-addon1'>
-        <img src='https://i.imgur.com/tB9uhDh.png' alt='Icono de búsqueda' />
-      </span>
-      <input
+    <SearchBarContainer className='d-flex input-group'>
+      <SearchBarIcon className='input-group-text' id='basic-addon1'>
+        <SearchBarImg
+          src='https://i.imgur.com/tB9uhDh.png'
+          alt='Icono de búsqueda'
+        />
+      </SearchBarIcon>
+      <SearchBarInput
         className='form-control'
         type='search'
-        placeholder='Search'
+        placeholder='Buscar'
         aria-label='Search'
         value={search}
         onChange={handleChange}
       />
-    </div>
+    </SearchBarContainer>
   );
 };
 

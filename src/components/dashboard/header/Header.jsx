@@ -8,6 +8,7 @@ import {
   Restaurant,
   RestaurantLogo,
   Title,
+  RestaurantContainer,
 } from '../DashboardStyles';
 import SearchBar from './SearchBar';
 
@@ -67,7 +68,7 @@ const Header = () => {
         <SearchBar />
       </AvatarContainer>
       <nav className='mt-5'>
-        <ul className='px-2'>
+        <RestaurantContainer className='px-2'>
           {filterOrders.length > 0 ? (
             filterOrders.map((order) => {
               const { restaurant } = order;
@@ -82,7 +83,7 @@ const Header = () => {
                     src={restaurant.image}
                     alt='Logo del restaurante'
                   />
-                  {restaurant.name}
+                  <span className='text-center'>{restaurant.name}</span>
                 </Restaurant>
               );
             })
@@ -91,7 +92,7 @@ const Header = () => {
               No se encontraron resultados
             </p>
           )}
-        </ul>
+        </RestaurantContainer>
       </nav>
     </HeaderContainer>
   );
