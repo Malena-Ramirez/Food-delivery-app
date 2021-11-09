@@ -25,7 +25,7 @@ $ npm install
 - Styled Components
 - Bootstrap
 
-## Up and running
+## Up and running (2 terminals)
 1. Run ```$ json-server --watch db.json --port 3004```
 2. Run ```$ npm start```
 3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
