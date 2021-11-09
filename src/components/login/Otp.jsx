@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import OtpInput from 'react-otp-input';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { loggedAction } from '../../actions/loggedAction';
 
 const Otp = () => {
   const { user } = useSelector((state) => state.user);
@@ -15,6 +16,14 @@ const Otp = () => {
       setotpCheck(code === user.otp);
     }
   };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (otpCheck) {
+      dispatch(loggedAction());
+    }
+  }, [dispatch, otpCheck]);
 
   return (
     <>
