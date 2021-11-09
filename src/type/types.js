@@ -7,4 +7,6 @@ export const types = {
 
   deliveryStatusLoad: '[Delivery] Load delivery status',
 
+  restaurantSelected: '[Restaurants] selected restaurant'
+
 }
