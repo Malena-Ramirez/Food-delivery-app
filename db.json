@@ -15,11 +15,11 @@
           "deliveryStatusID": 2
         },
         {
-          "restaurantID": 1102,
+          "restaurantID": 1002,
           "deliveryStatusID": 3
         },
         {
-          "restaurantID": 1103,
+          "restaurantID": 1003,
           "deliveryStatusID": 4
         }
       ]
@@ -39,7 +39,7 @@
           "deliveryStatusID": 2
         },
         {
-          "restaurantID": 1104,
+          "restaurantID": 1004,
           "deliveryStatusID": 3
         }
       ]
@@ -62,12 +62,12 @@
       "image": "https://i.imgur.com/AqXHSDB.png"
     },
     {
-      "id": 1000,
+      "id": 1003,
       "name": "Papa John's",
       "image": "https://i.imgur.com/Fqi6Vsr.jpg"
     },
     {
-      "id": 1000,
+      "id": 1004,
       "name": "Sandwich Qbano",
       "image": "https://i.imgur.com/iprOxqv.png"
     }
